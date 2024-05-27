@@ -1,17 +1,11 @@
-import { useMemo } from "react";
-
 export default function Header({
   cart,
   removeFromCart,
   changeAmount,
   clearCart,
+  isEmpty,
+  cardTotal,
 }) {
-  const isEmpty = useMemo(() => cart.length === 0, [cart]);
-  const cardTotal = useMemo(
-    () => cart.reduce((total, item) => total + item.amount * item.price, 0),
-    [cart]
-  );
-
   return (
     <header className="py-5 header">
       <div className="container-xl">
